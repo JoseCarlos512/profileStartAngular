@@ -102,5 +102,8 @@
       }
     }
   },
-  "defaultProject": "angularStart"
+  "defaultProject": "angularStart",
+  "cli": {
+    "analytics": "480995fa-ba86-4811-9045-756a03d3970c"
+  }
 }

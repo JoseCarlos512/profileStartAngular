@@ -7,6 +7,7 @@ import { NoticiasComponent } from './components/noticias/noticias.component';
 import { NoticiaCompletaComponent } from './components/noticia-completa/noticia-completa.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
+import { ModalsComponent } from './shared/modals/modals.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { FooterComponent } from './shared/footer/footer.component';
     NoticiasComponent,
     NoticiaCompletaComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ModalsComponent
   ],
   imports: [
     BrowserModule,
