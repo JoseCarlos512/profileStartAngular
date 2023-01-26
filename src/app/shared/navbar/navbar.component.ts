@@ -19,7 +19,7 @@ export class NavbarComponent implements OnInit {
   }
 
   alerta() {
-    $('#alerta').modal();
+    $("#alerta").modal();
     this.cerrarNavbar();
   }
 

@@ -1,3 +1,5 @@
+
+
 body {
   background-image: url('./assets/img/fondo2.jpg');
   margin-top: 100px;
@@ -29,6 +31,11 @@ color: #C13584 !important;
 color: #00acee;
 }
 
+.fa-at,
+.fa-comment {
+    color: rgba(255, 255, 0, 0.7) !important;
+}
+
 .badge-warning {
   background-color: yellow !important;
 }
@@ -48,6 +55,17 @@ color: #00acee;
 
 .mt-n1 {
   margin-top: -1.2rem !important;
+}
+
+.btn-warning {
+    background-color: rgb(255, 255, 57)  !important;
+    color: black !important;
+    font-weight: 620;
+}
+
+.btn-warning:hover {
+    background-color: yellow !important;
+    font-weight: 680;
 }
 
 .colorBody1 {
@@ -119,4 +137,16 @@ color: #00acee;
     background-image: url('./assets/img/navfoo.jpg');
     color: yellow !important;
     border: 10px inset yellow;
+}
+
+.backContacto13 {
+    background-color: rgb(0, 0, 0) !important;
+    border: 1px solid yellow;
+}
+
+.backInput14 {
+    background-color: rgb(0, 0, 0) !important;
+    border: 1px solid yellow;
+    color: rgb(194, 194, 194) !important;
+    text-align: left;
 }

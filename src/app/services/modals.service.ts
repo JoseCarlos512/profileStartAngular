@@ -28,9 +28,19 @@ export class ModalService {
   contacto() {
     setTimeout(() => {
       $('input[type="checkbox"]').prop('checked', false);
-      this.privacidadSeleccionada = true;
-    }, 100);
-    $('#alerta').modal('hide');
-    // Abrir modal contacto y cerrar modal alerta
+        this.privacidadSeleccionada = true;
+      }, 100);
+      $('#alerta').modal('hide');
+
+    // Abrir modal contacto y cerrar modal alert
+    setTimeout(() => {
+      $('#contacto').modal();
+    }, 500);
+
+    $(document).ready(() => {
+      $('#contacto').on('shown.bs.modal', () => {
+        $('#focusInput').trigger('focus');
+      });
+    });
   }
 }
