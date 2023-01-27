@@ -9,6 +9,9 @@ declare let $:any;
 })
 export class NavbarComponent implements OnInit {
 
+  public ojo:boolean = true;
+  public login1!:boolean;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -21,6 +24,27 @@ export class NavbarComponent implements OnInit {
   alerta() {
     $("#alerta").modal();
     this.cerrarNavbar();
+  }
+
+  onClick1() {
+    this.ojo = false;
+    this.login1 = false;
+    $(()=>{
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  }
+
+  onClick2() {
+    this.ojo = true;
+    this.login1 = true;
+
+    $(()=>{
+      $('[data-toggle="tooltip"]').tooltip()
+    })
+  }
+
+  entrar() {
+
   }
 
 }

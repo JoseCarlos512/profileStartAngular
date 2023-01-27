@@ -1,7 +1,8 @@
 <div class="container fixed-top colorBody1">
   <nav class="navbar navbar-expand-lg navbar-light colorNavbar2 mt-1">
     <a class="navbar-brand ml-3" href="#">
-      <img src="../../../assets/img/ojo.png" width="40" height="40" alt="">
+      <img *ngIf="ojo" (click)="onClick1()" src="../../../assets/img/ojo.png" width="40" height="40" alt="">
+      <img *ngIf="!ojo" (click)="onClick2()" src="../../../assets/img/ojo.png" width="40" height="40" alt="">
     </a>
     
     <a class="navbar-brand colorName4 ml-3">
@@ -33,13 +34,14 @@
           <li class="nav-item" routerLinkActive="active">
             <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/ajustes']">Ajustes </a>
           </li>
-  
-          
         </ul>
+
+        <i *ngIf="login1" 
+          (click)="entrar()" data-toggle="tooltip" data-placement="left" title="Admin login" 
+           class="fas fa-sign-in-alt fa-lg  mr-5 colorNegro16"></i>
+
         <button (click)="alerta()" class="btn btn-outline-warning my-2" type="button">
-
           <span class="badge badge-warning text-uppercase">Contacto</span>
-
         </button>
       </div>
     </div>
