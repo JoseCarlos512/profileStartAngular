@@ -72,3 +72,75 @@
     </div>
   </div>
 </div>
+
+
+<!-- Modal Login-->
+<div class="modal fade animated fadeIn slow mt-5 py-5" id="loginModal" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content colorModal11">
+      <div class="container backModal12">
+        <div class="container text-center mt-3">
+          <h3 class="fedeSub colorName3"><i class="fas fa-comments">Login</i>
+            <button (click)="limpiarMensaje()" type="button" class="close text-right colorName3" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </h3>
+        </div>
+        <div class="modal-body">
+          <form #flogin="ngForm" (ngSubmit)="loginUser(flogin)">
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text backContacto13"><i class="fas fa-user fa-at"></i></div>
+                </div>
+                <input [(ngModel)]="usuario.email" name="email" type="email" class="form-control backInput14"
+                   placeholder="Email..." autocomplete="off" id="focusInput" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="input-group mb-2">
+                <div class="input-group-prepend">
+                  <div class="input-group-text backContacto13"><i class="fas fa-lock fa-at"></i></div>
+                </div>
+                <input [(ngModel)]="usuario.password" name="password" type="password" class="form-control backInput14" 
+                  placeholder="Password..." id="focusInput" required>
+              </div>
+            </div>
+            <div class="text-center">
+              <input type="submit" value="ACCEDER" class="btn btn-warning btn-block rounded-0 py-2">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Logout-->
+<div class="modal fade mt-5 py-5" id="logoutModal" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content colorModal11">
+      <div class="container backModal12">
+        <div class="modal-body text-center colorTexto10">
+          <p class="font-weight-light">
+            ¿Esta seguro de cerrar Sesion?
+          </p>
+          <div>
+            <label> <small>Dar click en continuar si desea cerrar sesion</small> </label>
+          </div>
+          <hr>
+          <button type="button" (click)="closeModalLogout()"
+            class="btn btn-outline-warning btn-sm" data-dismiss="modal"> <span class="colorName3">Cancelar</span>
+          </button>
+          <button type="button" (click)="logoutUser()"
+            class="btn btn-outline-warning btn-sm"><span class="colorName3">
+              Continuar </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

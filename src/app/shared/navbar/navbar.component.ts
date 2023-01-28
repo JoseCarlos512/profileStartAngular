@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalService } from 'src/app/services/modals.service';
 declare let $:any;
 
 @Component({
@@ -10,9 +11,9 @@ declare let $:any;
 export class NavbarComponent implements OnInit {
 
   public ojo:boolean = true;
-  public login1!:boolean;
+  public login:boolean = false;
 
-  constructor() { }
+  constructor(public modalService: ModalService) { }
 
   ngOnInit(): void {
   }
@@ -28,7 +29,7 @@ export class NavbarComponent implements OnInit {
 
   onClick1() {
     this.ojo = false;
-    this.login1 = false;
+    this.login = false;
     $(()=>{
       $('[data-toggle="tooltip"]').tooltip()
     })
@@ -36,15 +37,24 @@ export class NavbarComponent implements OnInit {
 
   onClick2() {
     this.ojo = true;
-    this.login1 = true;
+    this.login = true;
 
     $(()=>{
       $('[data-toggle="tooltip"]').tooltip()
     })
   }
 
-  entrar() {
-
+  acceder() {
+    console.log("Acceder");
+    setTimeout(() => {
+      $('#loginModal').modal();
+    }, 500);
   }
+
+  cerrarSesion(){
+    setTimeout(() => {
+      $('#logoutModal').modal();
+    }, 500);
+  } 
 
 }

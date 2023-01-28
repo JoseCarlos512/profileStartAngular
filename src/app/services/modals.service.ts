@@ -8,6 +8,7 @@ export class ModalService {
 
   privacidad!: boolean;
   privacidadSeleccionada!: boolean;
+  public online:boolean = false;
 
   constructor() { }
 
@@ -30,9 +31,12 @@ export class ModalService {
       $('input[type="checkbox"]').prop('checked', false);
         this.privacidadSeleccionada = true;
       }, 100);
-      $('#alerta').modal('hide');
+      
 
-    // Abrir modal contacto y cerrar modal alert
+    //cerrar modal alert
+    $('#alerta').modal('hide');
+
+    // Abrir modal contacto
     setTimeout(() => {
       $('#contacto').modal();
     }, 500);
