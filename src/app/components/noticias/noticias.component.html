@@ -5,13 +5,14 @@
     <div class="container mt-3">
       <div class="container backPaginaNoticias34">
         <div class="row">
-          <div class="col-12 col-md-4 col-lg-3 mb-3 cursor7">
+          <div (click)="mostrarNoticia(noticia)" *ngFor="let noticia of noticias" 
+               class="col-12 col-md-4 col-lg-3 mb-3 cursor7">
             <div class="card backNoticias35">
-              <img src='' class="card-img-top">
+              <img [src]="noticia.img" class="card-img-top">
               <div class="card-body text-center">
-                <h5 class="card-title backNoticias36"></h5>
-                <p class="card-text sub39"></p>
-                <p class="card-text"><small class="colorTexto40"></small></p>
+                <h5 class="card-title backNoticias36">{{noticia.titulo}}</h5>
+                <p class="card-text sub39">{{noticia.subtitulo}}</p>
+                <p class="card-text"><small class="colorTexto40">{{noticia.fecha}}</small></p>
               </div>
             </div>
           </div>

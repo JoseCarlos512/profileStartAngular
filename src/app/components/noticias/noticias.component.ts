@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NoticiaService } from 'src/app/services/noticia.service';
 
 @Component({
   selector: 'app-noticias',
@@ -59,9 +61,18 @@ export class NoticiasComponent implements OnInit {
     }
   ];
   
-  constructor() { }
+  constructor(private noticiaSel: NoticiaService,
+              private router:Router) { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0);
+  }
+
+  mostrarNoticia(noticia:any) {
+      this.noticiaSel.noticiaSel = noticia
+      console.log(this.noticiaSel);
+
+      this.router.navigateByUrl('noticiaCompleta')
   }
 
 }
