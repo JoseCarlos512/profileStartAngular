@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class NoticiaService {
 
   public noticiaSel:any;
+  public noticiaCompleta:boolean=false;
   
   constructor() { }
 }

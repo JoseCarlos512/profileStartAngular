@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NoticiaCompletaGuard } from './guards/noticia-completa.guard';
 
 const routes: Routes = [
   {
@@ -9,7 +10,8 @@ const routes: Routes = [
     path: 'noticias', loadChildren: ()=>  import('./components/noticias/noticias.module').then(m => m.NoticiasModule)
   },
   {
-    path: 'noticiaCompleta', loadChildren: ()=>  import('./components/noticia-completa/noticia-completa.module').then(m => m.NoticiaCompletaModule)
+    path: 'noticiaCompleta', loadChildren: ()=>  import('./components/noticia-completa/noticia-completa.module').then(m => m.NoticiaCompletaModule),
+    canActivate: [NoticiaCompletaGuard]
   },
   {
     path: 'mensajes', loadChildren: ()=>  import('./components/mensajes/mensajes.module').then(m => m.MensajesModule)

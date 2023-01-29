@@ -9,8 +9,8 @@
         <div class="card backNoticiaCompleta41 text-center">
   
           <h5 class="card-title backNoticiaCompleta42">Lorem ipsum dolor sit amet consectetur adipisicing elit</h5>
-  
-          <img [src]="noticiaService.noticiaSel.img" class="card-img img-fluid">
+          
+          <img *ngIf="noticiaService.noticiaSel" [src]="noticiaService.noticiaSel.img" class="card-img img-fluid">
   
           <div class="card-body text-justify">
   
@@ -46,7 +46,8 @@
                 <u>Federica Daniela Jiménez</u>
               </span>
               <span>
-                <small class="colorTexto40">{{noticiaService.noticiaSel.fecha}}</small>
+                <small *ngIf="noticiaService.noticiaSel" class="colorTexto40">{{noticiaService.noticiaSel.fecha}}</small>
+                <small *ngIf="!noticiaService.noticiaSel" class="colorTexto40">28-01-2023</small>
               </span>
             </p>
           </div>

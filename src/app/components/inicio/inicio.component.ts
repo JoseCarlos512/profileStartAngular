@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { NoticiaService } from 'src/app/services/noticia.service';
 declare let $: any;
 
 @Component({
@@ -10,9 +12,18 @@ declare let $: any;
 export class InicioComponent implements OnInit {
 
   public mostrarYo:boolean=true;
-  constructor() { }
+  constructor(
+    private router:Router,
+    public noticiaService: NoticiaService
+  ) { }
 
   ngOnInit(): void {
+    window.scrollTo(0,0);
+    $(() => {
+      $('[data-togle="tooltip"]').tooltip();
+    });
+
+    this.noticiaService.noticiaCompleta = false;
   }
 
   yoMostrar() {
@@ -22,5 +33,23 @@ export class InicioComponent implements OnInit {
   tecnologias() {
     console.log("modal teconologias")
     $('#modalTecnologias').modal();
+  }
+
+  sobreMi() {
+    $('#sobreMi').modal();
+  }
+
+  mostrarNoticia() {
+
+    console.log("Ingreso=??");
+    $(()=> {
+      $('[data-togle="tooltip"]').tooltip('hide');
+    });
+
+    this.noticiaService.noticiaCompleta = true;
+
+    setTimeout(()=> {
+      this.router.navigateByUrl('noticiaCompleta')
+    },150)
   }
 }
