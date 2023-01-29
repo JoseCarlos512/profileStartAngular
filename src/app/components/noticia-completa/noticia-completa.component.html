@@ -10,7 +10,7 @@
   
           <h5 class="card-title backNoticiaCompleta42">Lorem ipsum dolor sit amet consectetur adipisicing elit</h5>
   
-          <img class="card-img img-fluid">
+          <img [src]="noticiaService.noticiaSel.img" class="card-img img-fluid">
   
           <div class="card-body text-justify">
   
@@ -34,7 +34,7 @@
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, totam ratione eaque, repellat inventore
               soluta odit quaerat vitae aliquam, beatae reiciendis et cum numquam dolores.
             </p>
-            <div class="text-center">
+            <div (click)="backPage()" class="text-center">
               <i class="fas fa-arrow-alt-circle-left fa-2x cursor7"></i>
             </div>
           </div>
@@ -46,7 +46,7 @@
                 <u>Federica Daniela Jiménez</u>
               </span>
               <span>
-                <small class="colorTexto40">15/10/2020</small>
+                <small class="colorTexto40">{{noticiaService.noticiaSel.fecha}}</small>
               </span>
             </p>
           </div>
