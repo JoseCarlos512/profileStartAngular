@@ -10,18 +10,18 @@
           <h2> <u class="text-capitalize">Formación tecnológica</u></h2><br>
 
           <div class="btn-group btn-group-toggle text-center">
-            <label (click)="pagina1()" [ngClass]="clase1" class="cursor7 btn-sm mr-2">
+            <label (click)="pagina1()" [ngClass]="modalService.clase1" class="cursor7 btn-sm mr-2">
               1
             </label>
-            <label (click)="pagina2()" [ngClass]="clase2" class="cursor7 btn-sm mr-2">
+            <label (click)="pagina2()" [ngClass]="modalService.clase2" class="cursor7 btn-sm mr-2">
               2
             </label>
-            <label (click)="pagina3()" [ngClass]="clase3" class="cursor7 btn-sm">
+            <label (click)="pagina3()" [ngClass]="modalService.clase3" class="cursor7 btn-sm">
               3
             </label>
           </div>
 
-          <div *ngIf="mostrar1" class="container colorTexto10">
+          <div *ngIf="modalService.mostrar1" class="container colorTexto10">
             <p class="font-weight-light text-justify">
               <i class="fab fa-angular fa-lg mr-3"></i>
               <span class="mr-2">Angular 1:</span>
@@ -39,7 +39,7 @@
             </p>
           </div>
 
-          <div *ngIf="mostrar2" class="container colorTexto10">
+          <div *ngIf="modalService.mostrar2" class="container colorTexto10">
             <p class="font-weight-light text-justify">
               <i class="fab fa-angular fa-lg mr-3"></i>
               <span class="mr-2">Angular 2:</span>
@@ -57,7 +57,7 @@
             </p>
           </div>
 
-          <div *ngIf="mostrar3" class="container colorTexto10">
+          <div *ngIf="modalService.mostrar3" class="container colorTexto10">
             <p class="font-weight-light text-justify">
               <i class="fab fa-angular fa-lg mr-3"></i>
               <span class="mr-2">Angular 3:</span>
@@ -79,6 +79,45 @@
             class="btn btn-outline-warning btn-sm tamanoSalir26">Salir</button>
         </div>
 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Sobre Mí-->
+<div class="modal fade mt-5 py-5" id="sobreMi" data-backdrop="static" tabindex="-1" role="dialog"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content colorModal11">
+      <div class="container backModal12">
+        <div class="modal-body text-center colorName3">
+          <h2> <u class="text-capitalize">federica daniela jiménez</u></h2><br>
+          <p class="font-weight-light text-justify colorTexto10 tab27">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus harum non laboriosam eligendi
+            impedit provident quod placeat ipsum nesciunt, debitis sunt modi accusamus earum quasi ea repudiandae et qui
+            dolorum, accusantium mollitia dicta exercitationem corrupti.
+          </p>
+          <p class="font-weight-light text-justify mt-2 colorTexto10 tab27">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus harum non laboriosam eligendi
+            impedit provident quod placeat ipsum nesciunt, debitis sunt modi accusamus earum quasi ea repudiandae et qui
+            dolorum, accusantium mollitia dicta exercitationem corrupti.
+          </p>
+          <p class="font-weight-light text-justify mt-2 colorTexto10 tab27">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa repellendus harum non laboriosam eligendi
+            impedit provident quod placeat ipsum nesciunt, debitis sunt modi accusamus earum quasi ea repudiandae et qui
+            dolorum, accusantium mollitia dicta exercitationem corrupti.
+          </p>
+          <p class="font-weight-light text-justify mt-2 colorTexto10 tab27">
+
+          </p>
+          <p class="font-weight-light text-justify mt-2 colorTexto10 tab27">
+
+          </p>
+          <hr>
+          <button (click)="cerrarSobreMi()" type="button"
+            class="btn btn-outline-warning tamanoSalir26 btn-sm">Salir</button>
+        </div>
       </div>
     </div>
   </div>
