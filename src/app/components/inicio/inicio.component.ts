@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ImagenesYoService } from 'src/app/services/imagenes-yo.service';
 import { NoticiaService } from 'src/app/services/noticia.service';
 declare let $: any;
 
@@ -14,7 +15,8 @@ export class InicioComponent implements OnInit {
   public mostrarYo:boolean=true;
   constructor(
     private router:Router,
-    public noticiaService: NoticiaService
+    public noticiaService: NoticiaService,
+    public imagenesYo: ImagenesYoService
   ) { }
 
   ngOnInit(): void {
