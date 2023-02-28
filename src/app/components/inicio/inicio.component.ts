@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Noticia } from 'src/app/interfaces/noticias';
 import { ImagenesYoService } from 'src/app/services/imagenes-yo.service';
 import { NoticiaService } from 'src/app/services/noticia.service';
 declare let $: any;
@@ -13,6 +14,8 @@ declare let $: any;
 export class InicioComponent implements OnInit {
 
   public mostrarYo:boolean=true;
+  public ultimasNoticias:Noticia[] = [];
+
   constructor(
     private router:Router,
     public noticiaService: NoticiaService,
@@ -26,6 +29,13 @@ export class InicioComponent implements OnInit {
     });
 
     this.noticiaService.noticiaCompleta = false;
+
+    /** Obtener ultimas noticias */
+    this.noticiaService.getUltimasNoticias()
+      .subscribe((res:any)=> {
+          this.ultimasNoticias.push(...res.noticia.slice(0,3));
+          console.log(this.ultimasNoticias)
+      })
   }
 
   yoMostrar() {
