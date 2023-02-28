@@ -33,7 +33,6 @@ export class InicioComponent implements OnInit {
   }
 
   tecnologias() {
-    console.log("modal teconologias")
     $('#modalTecnologias').modal();
   }
 
